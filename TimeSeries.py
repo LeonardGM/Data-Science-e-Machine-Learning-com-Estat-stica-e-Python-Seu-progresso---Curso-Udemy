@@ -6,31 +6,40 @@ import locale
 
 #locale.setlocale(locale.LC_ALL, 'pt-BR')
 
-datetime.datetime.now() # tempo de agora
+# Tempo de agora
+
+datetime.datetime.now()
+
+# Diferença de tempo TimeDelta
 
 antes = datetime.datetime.now()
 depois = datetime.datetime.now()
+diferenca = depois - antes 
 
-diferenca = depois - antes # Diferença de tempo TimeDelta
+#Conversão de String para data e hora convencional do python
 
 str_data_hora = '09/17/20 13:26:35'
 
-#convertida_para_datetime = datetime.datetime.strptime(str_data_hora, '%m/%d/%y %H:%M:%S') #Conversão de String para data e hora convencional do python
-#print(convertida_para_datetime)
+convertida_para_datetime = datetime.datetime.strptime(str_data_hora, '%m/%d/%y %H:%M:%S') 
+print(convertida_para_datetime)
+
+#Conversão de data String para data convencional do python
 
 str_data = '17-09-2020'
-#data = datetime.datetime.strptime(str_data, '%d-%m-%Y').date() #Conversão de data String para data convencional do python
-#print(data)
+data = datetime.datetime.strptime(str_data, '%d-%m-%Y').date() 
+print(data)
+
+#Conversão de string de tempo para tempo convencional do python
 
 str_tempo = '14:45:38'
-#tempo = datetime.datetime.strptime(str_tempo, '%H:%M:%S').time() #Conversão de string de tempo para tempo convencional do python
-#print(tempo)
+tempo = datetime.datetime.strptime(str_tempo, '%H:%M:%S').time() 
+print(tempo)
 
 start = '01/01/2020'
 end = '31/12/2020'
 
 x = pd.date_range(start, end, freq = 'MS')#.strftime('%d/%b/%Y')
-#print(x)
+print(x)
 
 y = np.random.normal(10, 1, 12) # 12 elementos com média 10 com desvio padrão 1
 f, ax = plt.subplots(dpi = 100)
