@@ -5,6 +5,7 @@ km = pd.Series([4,6,6,7,11,13,18,21,24,26,27,35,36,36,42,43,45,49])
 #ticks = [4,13,22,31,40,49]
 
 def calcula_ticks(lista,barras):
+	lista.sort()
 	menor_valor = lista[0] # Pega o primeiro valor da lista
 	maior_valor = lista[-1] # Pega o ultimo valor da lista
 	intervalo = (maior_valor - menor_valor)/barras #Intervalo do histograma
@@ -22,6 +23,7 @@ def frequencia_relativa(total,yticks):
 		x = item/total
 		freq_rel.append("{0:.2f}%%".format(x*100))
 	return freq_rel
+
 
 lista = km.values
 barras = 5
